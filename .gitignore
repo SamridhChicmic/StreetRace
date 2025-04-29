@@ -1,0 +1,74 @@
+# === Cocos2d-x 3.17.2 C++ project ===
+
+# Build artifacts
+build/
+bin/
+obj/
+*.apk
+*.ipa
+*.so
+*.dll
+*.exe
+*.a
+*.dSYM/
+*.app
+
+# Android NDK and Gradle
+proj.android/.gradle/
+proj.android/.idea/
+proj.android/.cxx/
+proj.android/local.properties
+proj.android/gradlew
+proj.android/gradlew.bat
+proj.android/gradle/
+proj.android/build/
+proj.android/app/build/
+proj.android/cocos2d/cocos/platform/android/java/bin/
+proj.android/cocos2d/cocos/platform/android/java/gen/
+
+# iOS / Xcode
+proj.ios_mac/build/
+proj.ios_mac/DerivedData/
+proj.ios_mac/*.xcodeproj/project.xcworkspace/
+proj.ios_mac/*.xcworkspace/
+proj.ios_mac/*.xcodeproj/xcuserdata/
+proj.ios_mac/*.xcodeproj/project.xcworkspace/
+proj.ios_mac/*.xcodeproj/project.xcuserdatad/
+
+# macOS hidden files
+.DS_Store
+
+# VSCode
+.vscode/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# User-generated backups
+*.swp
+*~
+*.tmp
+*.bak
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Cocos Studio files (if used)
+*.csd
+*.csb
+
+# God-like big folders/files (optional sanity check)
+*.zip
+*.tar.gz
+*.rar
+
+# Git LFS (optional)
+.gitattributes

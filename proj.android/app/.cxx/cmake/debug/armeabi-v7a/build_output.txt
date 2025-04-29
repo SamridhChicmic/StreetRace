@@ -1,0 +1,10 @@
+using toolchain file:/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake
+PROJECT_NAME:CarRace
+PROJECT_SOURCE_DIR:/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace
+COCOS2DX_ROOT_PATH:/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d
+CMAKE_MODULE_PATH:/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cmake/Modules/
+PROJECT_BINARY_DIR:/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a
+ENGINE_BINARY_PATH:/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/engine
+CMAKE_GENERATOR: Ninja
+CMAKE_BUILD_TYPE: Debug
+Configuring done

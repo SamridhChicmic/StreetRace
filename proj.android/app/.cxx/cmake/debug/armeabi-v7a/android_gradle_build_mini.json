@@ -1,0 +1,185 @@
+{
+  "buildFiles": [
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/CMakeLists.txt",
+    "/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake",
+    "/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/build/cmake/platforms.cmake",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cmake/Modules/CocosBuildSet.cmake",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cmake/Modules/CocosBuildHelpers.cmake",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cmake/Modules/CocosConfigDefine.cmake",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cmake/Modules/CocosConfigDepend.cmake",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/2d/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/3d/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/platform/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/physics/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/physics3d/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/math/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/navmesh/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/renderer/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/vr/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/base/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/deprecated/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/ui/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/network/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/audio/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/storage/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/editor-support/cocosbuilder/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/editor-support/cocostudio/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/editor-support/spine/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/extensions/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/Box2D/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/cmake/CocosExternalConfig.cmake",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/chipmunk/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/freetype2/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/recast/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/bullet/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/jpeg/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/openssl/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/tiff/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/uv/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/webp/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/websockets/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/tinyxml2/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/xxhash/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/xxtea/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/clipper/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/edtaa3func/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/ConvertUTF/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/poly2tri/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/md5/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/curl/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/png/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/android-specific/cpufeatures/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/android-specific/pvmp3dec/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/android-specific/tremolo/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/zlib/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/external/unzip/CMakeLists.txt",
+    "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/cocos2d/cocos/platform/android/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "ext_md5-Debug-armeabi-v7a": {
+      "artifactName": "ext_md5",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_md5",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_md5.a",
+      "runtimeFiles": []
+    },
+    "ext_xxhash-Debug-armeabi-v7a": {
+      "artifactName": "ext_xxhash",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_xxhash",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_xxhash.a",
+      "runtimeFiles": []
+    },
+    "ext_tremolo-Debug-armeabi-v7a": {
+      "artifactName": "ext_tremolo",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_tremolo",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_tremolo.a",
+      "runtimeFiles": []
+    },
+    "ext_clipper-Debug-armeabi-v7a": {
+      "artifactName": "ext_clipper",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_clipper",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_clipper.a",
+      "runtimeFiles": []
+    },
+    "ext_recast-Debug-armeabi-v7a": {
+      "artifactName": "ext_recast",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_recast",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_recast.a",
+      "runtimeFiles": []
+    },
+    "ext_convertUTF-Debug-armeabi-v7a": {
+      "artifactName": "ext_convertUTF",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_convertUTF",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_convertUTF.a",
+      "runtimeFiles": []
+    },
+    "ext_poly2tri-Debug-armeabi-v7a": {
+      "artifactName": "ext_poly2tri",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_poly2tri",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_poly2tri.a",
+      "runtimeFiles": []
+    },
+    "ext_tinyxml2-Debug-armeabi-v7a": {
+      "artifactName": "ext_tinyxml2",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_tinyxml2",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_tinyxml2.a",
+      "runtimeFiles": []
+    },
+    "cpp_android_spec-Debug-armeabi-v7a": {
+      "artifactName": "cpp_android_spec",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" cpp_android_spec",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/engine/cocos/platform/libcpp_android_spec.a",
+      "runtimeFiles": []
+    },
+    "MyGame-Debug-armeabi-v7a": {
+      "artifactName": "MyGame",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" MyGame",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so",
+      "runtimeFiles": []
+    },
+    "cocos2d-Debug-armeabi-v7a": {
+      "artifactName": "cocos2d",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" cocos2d",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libcocos2d.a",
+      "runtimeFiles": []
+    },
+    "ext_unzip-Debug-armeabi-v7a": {
+      "artifactName": "ext_unzip",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_unzip",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_unzip.a",
+      "runtimeFiles": []
+    },
+    "ext_xxtea-Debug-armeabi-v7a": {
+      "artifactName": "ext_xxtea",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_xxtea",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_xxtea.a",
+      "runtimeFiles": []
+    },
+    "external-Debug-armeabi-v7a": {
+      "artifactName": "external",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" external",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libexternal.a",
+      "runtimeFiles": []
+    },
+    "ext_edtaa3func-Debug-armeabi-v7a": {
+      "artifactName": "ext_edtaa3func",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_edtaa3func",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_edtaa3func.a",
+      "runtimeFiles": []
+    },
+    "ext_cpufeatures-Debug-armeabi-v7a": {
+      "artifactName": "ext_cpufeatures",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_cpufeatures",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/engine/external/android-specific/cpufeatures/libext_cpufeatures.a",
+      "runtimeFiles": []
+    },
+    "ext_pvmp3dec-Debug-armeabi-v7a": {
+      "artifactName": "ext_pvmp3dec",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_pvmp3dec",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_pvmp3dec.a",
+      "runtimeFiles": []
+    }
+  }
+}

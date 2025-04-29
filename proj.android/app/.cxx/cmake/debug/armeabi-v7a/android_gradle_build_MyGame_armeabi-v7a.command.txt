@@ -1,0 +1,7 @@
+Executable : /Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a
+MyGame
+jvmArgs : 
+
