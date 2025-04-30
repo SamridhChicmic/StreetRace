@@ -30,3 +30,15 @@ void GameManager:: setCarSpeed(int number){
 int GameManager:: getCarSpeed(){
     return this->carSpeed;
 }
+void GameManager::setCarRef(cocos2d::Sprite *car) {
+    this->car=car;
+}
+cocos2d::Sprite* GameManager:: getCarRef(){
+    return this->car;
+}
+void GameManager::setGameEndStatus(bool value) {
+    this->gameEndStatus=value;
+}
+bool GameManager::getGameEndStatus() {
+    return this->gameEndStatus;
+}

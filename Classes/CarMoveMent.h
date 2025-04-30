@@ -21,6 +21,7 @@ public:
     void onTouchEnded(cocos2d::Touch*, cocos2d::Event*);
     void moveCar(float diff);
     void onTweenFinished();
+
 private:
     Node * Car;
     virtual void onEnter();

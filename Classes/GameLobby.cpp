@@ -152,9 +152,8 @@ void GameLobby::addStartButton(){
         switch (type)
         {
             case ui::Widget::TouchEventType::BEGAN:
-//                log("Start",pageView->getCurrentPageIndex());
-                CCLOG("Start - Page Index: %zd", pageView->getCurrentPageIndex());
                 GameManager::getInstance()->setSelectedCar(pageView->getCurrentPageIndex());
+                GameManager::getInstance()->setGameEndStatus(false);
                 Director::getInstance()->replaceScene(GamePlay::createScene());
                 break;
             case ui::Widget::TouchEventType::ENDED:

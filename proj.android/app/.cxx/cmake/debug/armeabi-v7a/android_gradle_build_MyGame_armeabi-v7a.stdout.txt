@@ -1,3 +1,22 @@
 ninja: Entering directory `/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a'
-[1/2] Building CXX object CMakeFiles/MyGame.dir/Classes/CarMoveMent.cpp.o
-[2/2] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so
+[1/4] Building CXX object CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o
+FAILED: CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o 
+/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -DANDROID -DCOCOS2D_DEBUG=1 -DLWS_WITH_LIBUV -DMyGame_EXPORTS -DUSE_FILE32API -I../../../../../../Classes -I../../../../../../cocos2d/cocos/audio/include -I../../../../../../cocos2d -I../../../../../../cocos2d/cocos -I../../../../../../cocos2d/extensions -I../../../../../../cocos2d/cocos/platform -I../../../../../../cocos2d/cocos/base -I../../../../../../cocos2d/cocos/editor-support -I../../../../../../cocos2d/cocos/platform/android -isystem ../../../../../../cocos2d/external/Box2D/include -isystem ../../../../../../cocos2d/external/chipmunk/include -isystem ../../../../../../cocos2d/external/freetype2/include/android/freetype2 -I../../../../../../cocos2d/external/recast/.. -isystem ../../../../../../cocos2d/external/jpeg/include/android -isystem ../../../../../../cocos2d/external/uv/include -isystem ../../../../../../cocos2d/external/webp/include/android -isystem ../../../../../../cocos2d/external/bullet/include -isystem ../../../../../../cocos2d/external/bullet/include/bullet -isystem ../../../../../../cocos2d/external/openssl/include/android -isystem ../../../../../../cocos2d/external/tiff/include/android -isystem ../../../../../../cocos2d/external/websockets/include/android -I../../../../../../cocos2d/external/tinyxml2/. -I../../../../../../cocos2d/external/xxhash/. -I../../../../../../cocos2d/external/xxtea/. -I../../../../../../cocos2d/external/clipper/. -I../../../../../../cocos2d/external/edtaa3func/. -I../../../../../../cocos2d/external/ConvertUTF/. -I../../../../../../cocos2d/external/poly2tri/.. -I../../../../../../cocos2d/external/md5/.. -isystem ../../../../../../cocos2d/external/curl/include/android -isystem ../../../../../../cocos2d/external/png/include/android -I/Users/samridhgupta/Library/Android/sdk/ndk/21.4.7075529/sources/android/cpufeatures -I../../../../../../cocos2d/external/android-specific/pvmp3dec/include -I../../../../../../cocos2d/external/android-specific/pvmp3dec/src -I../../../../../../cocos2d/external/android-specific/tremolo/. -isystem ../../../../../../cocos2d/external/zlib/include -I../../../../../../cocos2d/external/unzip/. -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -O0 -fno-limit-debug-info  -fPIC   -std=gnu++11 -MD -MT CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o -MF CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o.d -o CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o -c ../../../../../../Classes/GamePlay.cpp
+../../../../../../Classes/GamePlay.cpp:94:118: error: expected ')'
+    this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback), (85/(GameManager::getInstance()->getCarSpeed()));  // Every 2 seconds
+                                                                                                                     ^
+../../../../../../Classes/GamePlay.cpp:94:19: note: to match this '('
+    this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback), (85/(GameManager::getInstance()->getCarSpeed()));  // Every 2 seconds
+                  ^
+1 error generated.
+[2/4] Building CXX object CMakeFiles/MyGame.dir/Classes/RandomCar.cpp.o
+../../../../../../Classes/RandomCar.cpp:28:47: warning: format specifies type 'double' but the argument has type 'int' [-Wformat]
+    CCLOG(" Inside Create Random Car pos %f:",randIndex);
+                                         ~~   ^~~~~~~~~
+                                         %d
+../../../../../../cocos2d/cocos/platform/CCPlatformMacros.h:221:56: note: expanded from macro 'CCLOG'
+#define CCLOG(format, ...)      cocos2d::log(format, ##__VA_ARGS__)
+                                             ~~~~~~    ^~~~~~~~~~~
+1 warning generated.
+[3/4] Building CXX object CMakeFiles/MyGame.dir/Classes/GameLobby.cpp.o
+ninja: build stopped: subcommand failed.

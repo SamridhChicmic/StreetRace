@@ -54,7 +54,8 @@ list(APPEND GAME_SOURCE
      Classes/GameManager.cpp
      Classes/GamePlay.cpp
      Classes/MoveRoad.cpp
-      Classes/CarMoveMent.cpp
+     Classes/CarMoveMent.cpp
+     Classes/RandomCar.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
@@ -65,6 +66,7 @@ list(APPEND GAME_HEADER
      Classes/GamePlay.h
      Classes/MoveRoad.h
      Classes/CarMoveMent.h
+     Classes/RandomCar.h
      )
 
 if(ANDROID)

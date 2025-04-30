@@ -14,12 +14,18 @@ public:
     int getSelectedCar();
     void setCarSpeed(int number);
     int getCarSpeed();
+    void setCarRef(cocos2d::Sprite* car);
+    cocos2d::Sprite* getCarRef();
+    void setGameEndStatus(bool value);
+    bool getGameEndStatus();
 private:
     // Private constructor and destructor
     GameManager();
     ~GameManager();
     int selectedCar;
     int carSpeed;
+    cocos2d::Sprite* car;
+    bool gameEndStatus;
     // Delete copy constructor and assignment operator to prevent copies
     GameManager(const GameManager&) = delete;
     GameManager& operator=(const GameManager&) = delete;

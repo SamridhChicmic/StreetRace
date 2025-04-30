@@ -29,6 +29,7 @@
 #include "ui/CocosGUI.h"
 #include "GameManager.h"
 #include "CarMoveMent.h"
+#include "RandomCar.h"
 class GamePlay : public cocos2d::Scene
 {
 public:
@@ -49,6 +50,9 @@ public:
     void addCar();
     void addBackButton();
     void onBackButtonClicked(cocos2d::Ref* sender);
+    void addRandomCars();
+    void  spawnCarCallback(float dt);
+    void updateSpawnRate();
     // void addStartButton();
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlay);

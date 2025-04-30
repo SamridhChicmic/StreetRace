@@ -50,7 +50,7 @@ void CarMoveMent::moveCar(float diff) {
     CCLOG("OutSide  x=%f curr=%f", newX ,currentPos.x);
     if (newX >= maxOffsetLeft && newX <= maxOffsetRight) {
         float rotationAngle = (diff > 0) ? 15.0f : -15.0f;
-        auto move = MoveTo::create(0.2f, Vec2(newX, currentPos.y));
+        auto move = MoveTo::create(0.1f, Vec2(newX, currentPos.y));
         auto rotate = RotateTo::create(0.1f, rotationAngle);
         auto rotateBack = RotateTo::create(0.1f, 0.0f);
         auto onTweenFinished = CallFunc::create(CC_CALLBACK_0(CarMoveMent::onTweenFinished, this));

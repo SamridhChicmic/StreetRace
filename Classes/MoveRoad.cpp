@@ -8,6 +8,8 @@ void MoveRoad::onEnter(){
     actionMove();
 }
 void MoveRoad::update(float delta){
+    bool gameStatus=GameManager::getInstance()->getGameEndStatus();
+    if(gameStatus)return;
      int speed=GameManager::getInstance()->getCarSpeed();
      if (this->_owner == NULL) return;
      Vec2 position=this->_owner->getPosition();

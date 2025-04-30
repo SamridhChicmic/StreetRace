@@ -30,6 +30,7 @@
 #include "GamePlay.h"
 #include "MoveRoad.h"
 #include "CarMoveMent.h"
+#include "RandomCar.h"
 USING_NS_CC;
 
 Scene* GamePlay::createScene()
@@ -90,7 +91,7 @@ bool GamePlay::init()
     addBackground();
     addBackButton();
     addCar();
-
+    updateSpawnRate();
     return true;
 }
 void GamePlay::addCanvas(){
@@ -135,6 +136,7 @@ void GamePlay:: addCar(){
     if (carMoveComponent) {
         carMoveComponent->setCar(car);
     }
+    GameManager::getInstance()->setCarRef(car);
 }
 void GamePlay::onBackButtonClicked(cocos2d::Ref* sender){
     auto scene = GameLobby::createScene();
@@ -149,7 +151,27 @@ void GamePlay::addBackButton(){
     canvas->addChild(backbtn);
     backbtn->addClickEventListener(CC_CALLBACK_1(GamePlay::onBackButtonClicked, this));
 }
+void GamePlay::addRandomCars() {
+      Sprite * obstacleCar=Sprite::create();
+      obstacleCar->addComponent(new RandomCar());
+    auto RandomCarComponent = dynamic_cast<RandomCar*>(obstacleCar->getComponent("RandomCar"));
+    if (RandomCarComponent) {
+        RandomCarComponent->createRandomCar(s,land,canvas);
+    }
+    canvas->addChild(obstacleCar);
+}
+void GamePlay::spawnCarCallback(float dt) {
+    addRandomCars();
+}
+void GamePlay::updateSpawnRate() {
+    this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback));
 
+    float carHeight = 75.0f;
+    float carSpeed = GameManager::getInstance()->getCarSpeed()*10;
+    float spawnInterval = carHeight / carSpeed;
+
+    this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback), spawnInterval);
+}
 void GamePlay::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application
