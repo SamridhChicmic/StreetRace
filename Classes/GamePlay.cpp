@@ -29,6 +29,7 @@
 #include "GameManager.h"
 #include "GamePlay.h"
 #include "MoveRoad.h"
+#include "CarMoveMent.h"
 USING_NS_CC;
 
 Scene* GamePlay::createScene()
@@ -106,6 +107,7 @@ void GamePlay:: addBackground(){
      land->setAnchorPoint(Vec2(0.5,0.5));
      land->setPosition(s/2);
      canvas->addChild(land, 0);
+     land->addComponent(new CarMoveMent());
      GameManager::getInstance()->setCarSpeed(10);
      auto spriteOne=Sprite::create(ASSET::ROAD.c_str());
      spriteOne->setAnchorPoint(Vec2(0,0));
@@ -128,6 +130,11 @@ void GamePlay:: addCar(){
     car->setAnchorPoint(Vec2(0.5,0.5));
     car->setPosition(Vec2(s.width/2,car->getContentSize().height));
     canvas->addChild(car);
+    // get Component
+    auto carMoveComponent = dynamic_cast<CarMoveMent*>(land->getComponent("CarMoveMent"));
+    if (carMoveComponent) {
+        carMoveComponent->setCar(car);
+    }
 }
 void GamePlay::onBackButtonClicked(cocos2d::Ref* sender){
     auto scene = GameLobby::createScene();

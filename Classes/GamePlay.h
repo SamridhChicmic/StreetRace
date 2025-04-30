@@ -28,6 +28,7 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "GameManager.h"
+#include "CarMoveMent.h"
 class GamePlay : public cocos2d::Scene
 {
 public:

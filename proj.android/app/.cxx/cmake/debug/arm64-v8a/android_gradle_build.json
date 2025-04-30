@@ -6556,6 +6556,11 @@
           "workingDirectoryOrdinal": 0
         },
         {
+          "src": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/Classes/CarMoveMent.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
           "src": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/jni/hellocpp/main.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
@@ -6588,6 +6593,10 @@
         },
         {
           "header": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/Classes/MoveRoad.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/Classes/CarMoveMent.h",
           "workingDirectoryOrdinal": 0
         }
       ],

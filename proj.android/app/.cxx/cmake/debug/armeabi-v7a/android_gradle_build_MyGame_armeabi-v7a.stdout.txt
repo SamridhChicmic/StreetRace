@@ -1,29 +1,3 @@
 ninja: Entering directory `/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a'
-[1/6] Building CXX object CMakeFiles/MyGame.dir/Classes/GameManager.cpp.o
-[2/6] Building CXX object CMakeFiles/MyGame.dir/Classes/MoveRoad.cpp.o
-In file included from ../../../../../../Classes/MoveRoad.cpp:1:
-../../../../../../Classes/MoveRoad.h:10:25: warning: 'CCComponent' is deprecated [-Wdeprecated-declarations]
-class MoveRoad : public CCComponent{
-                        ^
-../../../../../../cocos2d/cocos/deprecated/CCDeprecated.h:832:1: note: 'CCComponent' has been explicitly marked deprecated here
-CC_DEPRECATED_ATTRIBUTE typedef Component CCComponent;
-^
-../../../../../../cocos2d/cocos/platform/CCPlatformMacros.h:274:52: note: expanded from macro 'CC_DEPRECATED_ATTRIBUTE'
-    #define CC_DEPRECATED_ATTRIBUTE __attribute__((deprecated))
-                                                   ^
-1 warning generated.
-[3/6] Building CXX object CMakeFiles/MyGame.dir/Classes/AppDelegate.cpp.o
-[4/6] Building CXX object CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o
-In file included from ../../../../../../Classes/GamePlay.cpp:31:
-../../../../../../Classes/MoveRoad.h:10:25: warning: 'CCComponent' is deprecated [-Wdeprecated-declarations]
-class MoveRoad : public CCComponent{
-                        ^
-../../../../../../cocos2d/cocos/deprecated/CCDeprecated.h:832:1: note: 'CCComponent' has been explicitly marked deprecated here
-CC_DEPRECATED_ATTRIBUTE typedef Component CCComponent;
-^
-../../../../../../cocos2d/cocos/platform/CCPlatformMacros.h:274:52: note: expanded from macro 'CC_DEPRECATED_ATTRIBUTE'
-    #define CC_DEPRECATED_ATTRIBUTE __attribute__((deprecated))
-                                                   ^
-1 warning generated.
-[5/6] Building CXX object CMakeFiles/MyGame.dir/Classes/GameLobby.cpp.o
-[6/6] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so
+[1/2] Building CXX object CMakeFiles/MyGame.dir/Classes/CarMoveMent.cpp.o
+[2/2] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so

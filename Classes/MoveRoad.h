@@ -7,8 +7,10 @@
 
 using namespace cocos2d;
 
-class MoveRoad : public CCComponent{
+class MoveRoad : public Component{
 public:
+    Node * SpriteOne;
+    Node * SpriteTwo;
     MoveRoad();
     void setSpeed(int speed);
 private:
