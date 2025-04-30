@@ -92,6 +92,7 @@ bool GamePlay::init()
     addBackButton();
     addCar();
     updateSpawnRate();
+    this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::checkGameStatus), 0.1f);
     return true;
 }
 void GamePlay::addCanvas(){
@@ -172,6 +173,14 @@ void GamePlay::updateSpawnRate() {
 
     this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback), spawnInterval);
 }
+void GamePlay::checkGameStatus(float dt) {
+    if (GameManager::getInstance()->getGameEndStatus()) {
+        this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback));
+        this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::checkGameStatus)); // stop checking after it's ended
+        CCLOG("Game ended. Callback unscheduled.");
+    }
+}
+
 void GamePlay::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application

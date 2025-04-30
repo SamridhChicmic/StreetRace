@@ -25,6 +25,7 @@ bool CarMoveMent :: onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event){
     return true;
 }
 void CarMoveMent::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event) {
+    if(GameManager::getInstance()->getGameEndStatus())return;
     Vec2 touchEnd = touch->getLocation();
     CCLOG("Touch End at: x=%f, y=%f", touchEnd.x, touchEnd.y);
 

@@ -53,6 +53,7 @@ public:
     void addRandomCars();
     void  spawnCarCallback(float dt);
     void updateSpawnRate();
+    void checkGameStatus(float dt);
     // void addStartButton();
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlay);
