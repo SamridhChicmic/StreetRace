@@ -33,7 +33,7 @@ void RandomCar::moveRandomCar(){
     Vec2 CurrPos=this->_owner->getPosition();
     if(CurrPos.y>=-75){
         CurrPos.y=CurrPos.y-(GameManager::getInstance()->getCarSpeed()/2);
-        this->_owner->setPosition(Vec2(CurrPos.x,CurrPos.y--));
+        this->_owner->setPosition(Vec2(CurrPos.x,CurrPos.y));
     }
     else{
         auto ScoreComponent = dynamic_cast<ScoreHandler*>(score->getComponent("ScoreHandler"));

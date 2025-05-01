@@ -89,6 +89,7 @@ bool GamePlay::init()
     ////////////////////////////
     // 3. add your codes below...
 //    GameManager::getInstance()->setGameEndStatus(false);
+    GameManager::getInstance()->setSpeedIncreaseIndicator(25);
     addCanvas();
     addBackground();
     addBackButton();
@@ -190,6 +191,13 @@ void GamePlay::updateSpawnRate() {
     this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback), spawnInterval);
 }
 void GamePlay::checkGameStatus(float dt) {
+    auto limiter=GameManager::getInstance()->getSpeedIncreaseIndicator();
+    if(GameManager::getInstance()->getGameScore()>limiter){
+          auto speed=GameManager::getInstance()->getCarSpeed() >=20 ?GameManager::getInstance()->getCarSpeed() : GameManager::getInstance()->getCarSpeed() + 2;
+         GameManager::getInstance()->setCarSpeed(speed);
+         GameManager::getInstance()->setSpeedIncreaseIndicator(limiter+25);
+         updateSpawnRate();
+    }
     if (GameManager::getInstance()->getGameEndStatus()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback));
         this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::checkGameStatus)); // stop checking after it's ended

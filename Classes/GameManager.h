@@ -20,6 +20,8 @@ public:
     bool getGameEndStatus();
     int getGameScore();
     void setGameScore(int number);
+    int getSpeedIncreaseIndicator();
+    void setSpeedIncreaseIndicator(int number);
 private:
     // Private constructor and destructor
     GameManager();
@@ -27,6 +29,7 @@ private:
     int selectedCar;
     int carSpeed;
     int gameScore;
+    int speedIncreaseIndicator;
     cocos2d::Sprite* car;
     bool gameEndStatus;
     // Delete copy constructor and assignment operator to prevent copies

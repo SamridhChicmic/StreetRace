@@ -49,3 +49,9 @@ void GameManager::setGameScore(int number){
 int GameManager:: getGameScore(){
     return this->gameScore;
 }
+int GameManager:: getSpeedIncreaseIndicator(){
+    return this->speedIncreaseIndicator;
+}
+void GameManager:: setSpeedIncreaseIndicator(int number){
+    this->speedIncreaseIndicator=number;
+}

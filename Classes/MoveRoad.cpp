@@ -8,18 +8,21 @@ void MoveRoad::onEnter(){
     actionMove();
 }
 void MoveRoad::update(float delta){
-    bool gameStatus=GameManager::getInstance()->getGameEndStatus();
-    if(gameStatus)return;
-     int speed=GameManager::getInstance()->getCarSpeed();
-     if (this->_owner == NULL) return;
-     Vec2 position=this->_owner->getPosition();
-     int totalHeight=this->_owner->getContentSize().height;
-     if(position.y> -totalHeight){
-         position.y=position.y-speed;
-         this->_owner->setPosition(Vec2(position.x,position.y));
-     }else{
-         this->_owner->setPosition(0,totalHeight-speed);
-     }
+    if (GameManager::getInstance()->getGameEndStatus()) return;
+    if (this->_owner == nullptr) return;
+
+    int speed = GameManager::getInstance()->getCarSpeed();
+    Vec2 position = this->_owner->getPosition();
+    int height = this->_owner->getContentSize().height;
+
+    position.y -= speed;
+
+    // If completely off screen (moved below -height), move back to top
+    if (position.y <= -height) {
+        position.y += height * 2;  // move above the other sprite
+    }
+
+    this->_owner->setPosition(position);
 }
 
 
