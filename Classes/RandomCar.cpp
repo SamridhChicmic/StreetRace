@@ -43,9 +43,10 @@ void RandomCar::moveRandomCar(){
 void RandomCar::collisionCheck() {
     bool value= this->getOwner()->getBoundingBox().intersectsRect(GameManager::getInstance()->getCarRef()->getBoundingBox());
     if(value && !GameManager::getInstance()->getGameEndStatus() ){
-        CCLOG("Before Change :: %d",GameManager::getInstance()->getGameEndStatus());
+//        CCLOG("Before Change :: %d",GameManager::getInstance()->getGameEndStatus());
+        GameManager::getInstance()->getCarRef()->stopAllActions();
         GameManager::getInstance()->setGameEndStatus(true);
-        CCLOG("After Change :: %d",GameManager::getInstance()->getGameEndStatus());
+//        CCLOG("After Change :: %d",GameManager::getInstance()->getGameEndStatus());
     }
 }
 void RandomCar::update(float delta){

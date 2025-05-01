@@ -1,68 +1,87 @@
 #include "CarMoveMent.h"
 #include "GameManager.h"
-CarMoveMent::CarMoveMent(){
+
+CarMoveMent::CarMoveMent() {
     setName("CarMoveMent");
 }
-void CarMoveMent::setCar(Node * car){
-    this->Car=car;
-    OriginalPos = Car->getPosition();
+
+void CarMoveMent::setCar(Node* car) {
+    this->Car = car;
+    OriginalPos = car->getPosition();
 }
-Node* CarMoveMent::getCar(){
+
+Node* CarMoveMent::getCar() {
     return this->Car;
 }
-void CarMoveMent::onEnter(){
+
+void CarMoveMent::onEnter() {
     Component::onEnter(); // Always call parent
-    isMoving=false;
+    isMoving = false;
     land = this->_owner;
+
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->onTouchBegan = CC_CALLBACK_2(CarMoveMent::onTouchBegan, this);
+    touchListener->onTouchMoved = CC_CALLBACK_2(CarMoveMent::onTouchMoved, this);
     touchListener->onTouchEnded = CC_CALLBACK_2(CarMoveMent::onTouchEnded, this);
+
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, land);
 }
-bool CarMoveMent :: onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event){
-    touchStart=touch->getLocation();
+
+bool CarMoveMent::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event) {
+    if (GameManager::getInstance()->getGameEndStatus()) return false;
+    touchStart = touch->getLocation();
+    swipeDetected = false;
     return true;
 }
-void CarMoveMent::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event) {
-    if(GameManager::getInstance()->getGameEndStatus())return;
-    Vec2 touchEnd = touch->getLocation();
 
+void CarMoveMent::onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event) {
+    if (GameManager::getInstance()->getGameEndStatus() || swipeDetected || isMoving) return;
+
+    Vec2 touchEnd = touch->getLocation();
     float xDiff = touchEnd.x - touchStart.x;
     float threshold = land->getContentSize().width / 6.5;
 
-    if (fabs(xDiff) < distanceDiff) return; // Ignore small swipes
-
-    if (xDiff < 0) {
-        moveCar(-threshold); // Swipe left
-    } else {
-        moveCar(threshold);  // Swipe right
+    if (fabs(xDiff) >= distanceDiff) {
+        swipeDetected = true; // Prevent further calls for same swipe
+        if (xDiff < 0) {
+            moveCar(-threshold); // Swipe left
+        } else {
+            moveCar(threshold);  // Swipe right
+        }
     }
 }
 
+void CarMoveMent::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event) {
+    // No longer needed for responsiveness
+}
+
 void CarMoveMent::moveCar(float diff) {
-    if (!Car || !land || isMoving ) return;
+    if (!Car || !land || isMoving) return;
 
     Vec2 currentPos = Car->getPosition();
-    float maxOffsetRight = OriginalPos.x+land->getContentSize().width / 6.5;
-    float maxOffsetLeft = OriginalPos.x-land->getContentSize().width / 6.5;
+    float laneWidth = land->getContentSize().width / 6.5;
+
+    float maxOffsetRight = OriginalPos.x + laneWidth;
+    float maxOffsetLeft = OriginalPos.x - laneWidth;
     float newX = currentPos.x + diff;
 
+    // Clamp between lanes
     if (newX >= maxOffsetLeft && newX <= maxOffsetRight) {
-        float rotationAngle = (diff > 0) ? 13.0f : -13.0f;
+        float rotationAngle = (diff > 0) ? 18.0f : -18.0f;
         auto move = MoveTo::create(0.08f, Vec2(newX, currentPos.y));
         auto rotate = RotateTo::create(0.08f, rotationAngle);
         auto rotateBack = RotateTo::create(0.08f, 0.0f);
         auto onTweenFinished = CallFunc::create(CC_CALLBACK_0(CarMoveMent::onTweenFinished, this));
-        isMoving=true;
-        auto tween = Sequence::create(rotate, move, rotateBack,onTweenFinished, nullptr);
+        isMoving = true;
+        auto tween = Sequence::create(rotate, move, rotateBack, onTweenFinished, nullptr);
         Car->runAction(tween);
-    } else {
-
     }
 }
+
 void CarMoveMent::onTweenFinished() {
-    isMoving=false;
+    isMoving = false;
 }
-void CarMoveMent::update(float delta){
-   
+
+void CarMoveMent::update(float delta) {
+    // optional future use
 }

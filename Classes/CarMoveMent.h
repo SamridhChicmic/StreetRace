@@ -1,32 +1,38 @@
-
-
-#ifndef __CarMoveMent__
-#define __CarMoveMent__
+#ifndef __CAR_MOVEMENT_H__
+#define __CAR_MOVEMENT_H__
 
 #include "cocos2d.h"
-
 using namespace cocos2d;
-
-class CarMoveMent : public Component{
+class CarMoveMent : public Component {
 public:
     CarMoveMent();
-    Vec2 touchStart;
-    Vec2 OriginalPos;
-    Node * land;
-    bool isMoving;
-    int distanceDiff=20;
-    void setCar(Node * car);
-    Node* getCar();
-    bool onTouchBegan(cocos2d::Touch*, cocos2d::Event*);
-    void onTouchEnded(cocos2d::Touch*, cocos2d::Event*);
+
+    virtual void onEnter() override;
+    virtual void update(float delta) override;
+
+    void setCar(cocos2d::Node* car);
+    cocos2d::Node* getCar();
+
+protected:
+    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+    void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
+    void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
+
+private:
     void moveCar(float diff);
     void onTweenFinished();
 
 private:
-    Node * Car;
-    virtual void onEnter();
-    virtual void update(float delta);
+    cocos2d::Node* Car = nullptr;
+    cocos2d::Node* land = nullptr;
 
+    cocos2d::Vec2 OriginalPos;
+    cocos2d::Vec2 touchStart;
+
+    bool isMoving = false;
+    bool swipeDetected = false;
+
+    float distanceDiff = 30.0f; // Minimum swipe distance to trigger movement
 };
 
-#endif /* defined(__CarMoveMent__) */
+#endif // __CAR_MOVEMENT_H__

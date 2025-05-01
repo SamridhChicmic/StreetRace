@@ -191,7 +191,7 @@ void GamePlay::checkGameStatus(float dt) {
     if (GameManager::getInstance()->getGameEndStatus()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback));
         this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::checkGameStatus)); // stop checking after it's ended
-        this->car->removeFromParentAndCleanup(true);
+//        this->car->removeFromParentAndCleanup(true);
         CCLOG("Game ended. Callback unscheduled.");
         gameEndPopUp();
     }
