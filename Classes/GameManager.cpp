@@ -42,3 +42,10 @@ void GameManager::setGameEndStatus(bool value) {
 bool GameManager::getGameEndStatus() {
     return this->gameEndStatus;
 }
+
+void GameManager::setGameScore(int number){
+    this->gameScore=number;
+}
+int GameManager:: getGameScore(){
+    return this->gameScore;
+}

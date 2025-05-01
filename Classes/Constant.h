@@ -10,6 +10,7 @@ namespace ASSET {
     static const std::string BACK_BTN = "Texture/leftarrow.png";
     static const std::string Base = "Texture/Base.png";
     static const std::string Blue_Button = "Texture/btn_blue.png";
+    static const std::string BaseCard = "Texture/BaseCard.png";
     // You can add more constants here
 }
 

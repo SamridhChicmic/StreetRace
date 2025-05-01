@@ -160,13 +160,6 @@
       "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libexternal.a",
       "runtimeFiles": []
     },
-    "ext_edtaa3func-Debug-armeabi-v7a": {
-      "artifactName": "ext_edtaa3func",
-      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_edtaa3func",
-      "abi": "armeabi-v7a",
-      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_edtaa3func.a",
-      "runtimeFiles": []
-    },
     "ext_cpufeatures-Debug-armeabi-v7a": {
       "artifactName": "ext_cpufeatures",
       "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_cpufeatures",
@@ -179,6 +172,13 @@
       "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_pvmp3dec",
       "abi": "armeabi-v7a",
       "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_pvmp3dec.a",
+      "runtimeFiles": []
+    },
+    "ext_edtaa3func-Debug-armeabi-v7a": {
+      "artifactName": "ext_edtaa3func",
+      "buildCommand": "/Users/samridhgupta/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a\" ext_edtaa3func",
+      "abi": "armeabi-v7a",
+      "output": "/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a/lib/libext_edtaa3func.a",
       "runtimeFiles": []
     }
   }

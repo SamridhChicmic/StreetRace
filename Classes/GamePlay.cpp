@@ -31,6 +31,7 @@
 #include "MoveRoad.h"
 #include "CarMoveMent.h"
 #include "RandomCar.h"
+#include "ScoreHandler.h"
 USING_NS_CC;
 
 Scene* GamePlay::createScene()
@@ -94,6 +95,7 @@ bool GamePlay::init()
     addCar();
     updateSpawnRate();
     this->schedule(CC_SCHEDULE_SELECTOR(GamePlay::checkGameStatus), 0.1f);
+    addGameScore();
     return true;
 }
 void GamePlay::addCanvas(){
@@ -159,7 +161,7 @@ void GamePlay::addRandomCars() {
     if(car){
         auto RandomCarComponent = dynamic_cast<RandomCar*>(car->getComponent("RandomCar"));
         if (RandomCarComponent) {
-            RandomCarComponent->createRandomCar(s,land,canvas,carPool );
+            RandomCarComponent->createRandomCar(s,land,canvas,carPool,score );
         }
         canvas->addChild(car);
     }else{
@@ -167,7 +169,7 @@ void GamePlay::addRandomCars() {
         obstacleCar->addComponent(new RandomCar());
         auto RandomCarComponent = dynamic_cast<RandomCar*>(obstacleCar->getComponent("RandomCar"));
         if (RandomCarComponent) {
-            RandomCarComponent->createRandomCar(s,land,canvas,carPool);
+            RandomCarComponent->createRandomCar(s,land,canvas,carPool,score);
         }
 
         canvas->addChild(obstacleCar);
@@ -208,19 +210,28 @@ void GamePlay::gameEndPopUp(){
     title->setAnchorPoint(Vec2(0.5,0.5));
     title->setTextColor(Color4B(117, 53, 0, 100));
     title->setAlignment(TextHAlignment::CENTER);
-    title->setPosition(Vec2(base->getContentSize().width/2,sizeBase.y-80));
+    title->setPosition(Vec2(base->getContentSize().width/2,sizeBase.y-40));
 
-
+    auto score = Label::createWithTTF("Score : "+std::to_string(GameManager::getInstance()->getGameScore()), "fonts/Marker Felt.ttf", 30);
+    base->addChild(score);
+    score->setAnchorPoint(Vec2(0.5,0.5));
+    score->setTextColor(Color4B(117, 53, 0, 100));
+    score->setAlignment(TextHAlignment::CENTER);
+    score->setPosition(Vec2(base->getContentSize().width/2,sizeBase.y-100));
     // Button
 
     auto restartButton=cocos2d::ui::Button::create(ASSET::Blue_Button.c_str());
     restartButton->setAnchorPoint(Vec2 (0.5, 0.5));
     restartButton->setPosition(Vec2 (base->getContentSize().width/2,50));
     restartButton->ignoreContentAdaptWithSize(false);
-    restartButton->setContentSize(Size(100, 60));
-    restartButton->setTitleText("Restart");
-    restartButton->setTitleFontName("fonts/Marker Felt.ttf");
-    restartButton->setTitleFontSize(20);
+    restartButton->setContentSize(Size(100, 50));
+//    restartButton->setTitleText("Restart");
+//    restartButton->setTitleFontName("fonts/Marker Felt.ttf");
+//    restartButton->setTitleFontSize(20);
+    auto buttonTitle = Label::createWithTTF("Restart", "fonts/Marker Felt.ttf", 20);
+    restartButton->addChild(buttonTitle);
+    buttonTitle->setAnchorPoint(Vec2(0.5,0.5));
+    buttonTitle->setPosition(Vec2(restartButton->getContentSize().width/2,restartButton->getContentSize().height/2  + 5));
     base->addChild(restartButton,3);
     restartButton->addClickEventListener(CC_CALLBACK_1(GamePlay::onRestartButtonClicked, this));
 }
@@ -231,6 +242,24 @@ void GamePlay:: onRestartButtonClicked(cocos2d::Ref* sender){
     CCLOG(" In Reset Game PopUp State Change:: %d", GameManager::getInstance()->getGameEndStatus());
     Director::getInstance()->replaceScene(TransitionFade::create(0.5f, GamePlay::createScene()));
 }
+void GamePlay::addGameScore() {
+    GameManager::getInstance()->setGameScore(0);
+    auto scorebase= Sprite::create(ASSET::BaseCard.c_str());
+    scorebase->setContentSize(Size(60,60));
+    scorebase->setPosition(Vec2(s.width - 60 ,s.height - 60 ));
+    canvas->addChild(scorebase);
+    scorebase->setAnchorPoint(Vec2(0.5,0.5));
+
+
+    score = Label::createWithTTF(std::to_string(GameManager::getInstance()->getGameScore()), "fonts/Marker Felt.ttf", 25);
+    canvas->addChild(score);
+    scorebase->setAnchorPoint(Vec2(0.5,0.5));
+//    score->setTextColor(Color4B(255, 221, 85, 255));
+    score->setPosition(Vec2(s.width - 60 ,s.height - 55 ));
+    score->addComponent(new ScoreHandler());
+
+}
+
 void GamePlay::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application

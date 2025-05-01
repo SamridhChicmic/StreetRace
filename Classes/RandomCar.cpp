@@ -1,13 +1,15 @@
 #include "RandomCar.h"
 #include "GameManager.h"
+#include "ScoreHandler.h"
 RandomCar::RandomCar(){
     setName("RandomCar");
 }
 void RandomCar::onEnter(){
 
 }
-void RandomCar::createRandomCar(Size  s,Node * land, Node * canvas,NodePool carPool){
+void RandomCar::createRandomCar(Size  s,Node * land, Node * canvas,NodePool carPool, Label *score){
     this->carPool=carPool;
+    this->score=score;
     Vec2 OriginalPos = Vec2(s.width/2, s.height+20);
     Vec2 maxOffsetRight = Vec2(OriginalPos.x + land->getContentSize().width / 6.5, s.height+20);
     Vec2 maxOffsetLeft = Vec2(OriginalPos.x - land->getContentSize().width / 6.5, s.height+20);
@@ -34,7 +36,10 @@ void RandomCar::moveRandomCar(){
         this->_owner->setPosition(Vec2(CurrPos.x,CurrPos.y--));
     }
     else{
-
+        auto ScoreComponent = dynamic_cast<ScoreHandler*>(score->getComponent("ScoreHandler"));
+        if (ScoreComponent) {
+            ScoreComponent->scoreUpdate();
+        }
          this->getOwner()->removeFromParent();
         this->carPool.returnNode(dynamic_cast<Sprite*>(this->getOwner()));
     }

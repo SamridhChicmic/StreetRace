@@ -38,6 +38,7 @@ public:
     cocos2d::Node* canvas;
     cocos2d::Node* land;
     cocos2d::Sprite* car;
+    cocos2d::Label* score;
     // cocos2d::ui::PageView* pageView;
     cocos2d::Size s;
     NodePool carPool;
@@ -53,11 +54,13 @@ public:
     void addBackButton();
     void onBackButtonClicked(cocos2d::Ref* sender);
     void addRandomCars();
+    void addGameScore();
     void  spawnCarCallback(float dt);
     void updateSpawnRate();
     void checkGameStatus(float dt);
     void gameEndPopUp();
     void onRestartButtonClicked(cocos2d::Ref* sender);
+
     // void addStartButton();
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlay);

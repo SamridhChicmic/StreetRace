@@ -1,2 +1,6 @@
 ninja: Entering directory `/Users/samridhgupta/Documents/Cocos2dxC++/CarGame/CarRace/proj.android/app/.cxx/cmake/debug/armeabi-v7a'
-ninja: no work to do.
+[1/5] Building CXX object CMakeFiles/MyGame.dir/Classes/ScoreHandler.cpp.o
+[2/5] Building CXX object CMakeFiles/MyGame.dir/Classes/RandomCar.cpp.o
+[3/5] Building CXX object CMakeFiles/MyGame.dir/Classes/GameLobby.cpp.o
+[4/5] Building CXX object CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o
+[5/5] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so

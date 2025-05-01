@@ -57,6 +57,7 @@ list(APPEND GAME_SOURCE
      Classes/CarMoveMent.cpp
      Classes/RandomCar.cpp
      Classes/NodePool.cpp
+     Classes/ScoreHandler.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
@@ -69,6 +70,7 @@ list(APPEND GAME_HEADER
      Classes/CarMoveMent.h
      Classes/RandomCar.h
      Classes/NodePool.h
+     Classes/ScoreHandler.h
      )
 
 if(ANDROID)
