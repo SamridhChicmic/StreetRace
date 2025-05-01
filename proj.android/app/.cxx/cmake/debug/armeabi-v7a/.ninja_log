@@ -798,3 +798,12 @@
 2708	5769	1746006120	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so	cb7ee601a87eaa47
 15	3150	1746011337	CMakeFiles/MyGame.dir/Classes/RandomCar.cpp.o	9047644d7a21cdc3
 14	3454	1746011338	CMakeFiles/MyGame.dir/Classes/GameLobby.cpp.o	bbf267be495da9c6
+31	4776	1746083748	CMakeFiles/MyGame.dir/Classes/GameManager.cpp.o	7d239f604a63b435
+33	4949	1746083748	CMakeFiles/MyGame.dir/Classes/RandomCar.cpp.o	9047644d7a21cdc3
+33	5098	1746083748	CMakeFiles/MyGame.dir/Classes/NodePool.cpp.o	6dd9c68d216245e5
+30	5213	1746083749	CMakeFiles/MyGame.dir/Classes/AppDelegate.cpp.o	28da4b564028e287
+32	5328	1746083749	CMakeFiles/MyGame.dir/Classes/MoveRoad.cpp.o	fc9a775fcf8c6e31
+31	5351	1746083749	CMakeFiles/MyGame.dir/Classes/GamePlay.cpp.o	5fd762324da26352
+31	5503	1746083749	CMakeFiles/MyGame.dir/Classes/GameLobby.cpp.o	bbf267be495da9c6
+32	5625	1746083749	CMakeFiles/MyGame.dir/Classes/CarMoveMent.cpp.o	2927f0b36d06ee85
+5625	8484	1746083751	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libMyGame.so	b9d2925703e04360

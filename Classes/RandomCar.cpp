@@ -8,9 +8,9 @@ void RandomCar::onEnter(){
 }
 void RandomCar::createRandomCar(Size  s,Node * land, Node * canvas,NodePool carPool){
     this->carPool=carPool;
-    Vec2 OriginalPos = Vec2(s.width/2, s.height);
-    Vec2 maxOffsetRight = Vec2(OriginalPos.x + land->getContentSize().width / 6.5, s.height);
-    Vec2 maxOffsetLeft = Vec2(OriginalPos.x - land->getContentSize().width / 6.5, s.height);
+    Vec2 OriginalPos = Vec2(s.width/2, s.height+20);
+    Vec2 maxOffsetRight = Vec2(OriginalPos.x + land->getContentSize().width / 6.5, s.height+20);
+    Vec2 maxOffsetLeft = Vec2(OriginalPos.x - land->getContentSize().width / 6.5, s.height+20);
 
     // Static array for fixed positions
     Vec2 randomCarPositions[3] = {maxOffsetLeft, OriginalPos, maxOffsetRight};
@@ -42,8 +42,10 @@ void RandomCar::moveRandomCar(){
 
 void RandomCar::collisionCheck() {
     bool value= this->getOwner()->getBoundingBox().intersectsRect(GameManager::getInstance()->getCarRef()->getBoundingBox());
-    if(value){
+    if(value && !GameManager::getInstance()->getGameEndStatus() ){
+        CCLOG("Before Change :: %d",GameManager::getInstance()->getGameEndStatus());
         GameManager::getInstance()->setGameEndStatus(true);
+        CCLOG("After Change :: %d",GameManager::getInstance()->getGameEndStatus());
     }
 }
 void RandomCar::update(float delta){

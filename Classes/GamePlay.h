@@ -56,6 +56,8 @@ public:
     void  spawnCarCallback(float dt);
     void updateSpawnRate();
     void checkGameStatus(float dt);
+    void gameEndPopUp();
+    void onRestartButtonClicked(cocos2d::Ref* sender);
     // void addStartButton();
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlay);

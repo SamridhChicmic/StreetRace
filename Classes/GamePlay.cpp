@@ -87,6 +87,7 @@ bool GamePlay::init()
     // this->addChild(menu, 1);
     ////////////////////////////
     // 3. add your codes below...
+//    GameManager::getInstance()->setGameEndStatus(false);
     addCanvas();
     addBackground();
     addBackButton();
@@ -152,6 +153,7 @@ void GamePlay::addBackButton(){
     canvas->addChild(backbtn);
     backbtn->addClickEventListener(CC_CALLBACK_1(GamePlay::onBackButtonClicked, this));
 }
+
 void GamePlay::addRandomCars() {
     auto car = carPool.getNode();
     if(car){
@@ -189,10 +191,46 @@ void GamePlay::checkGameStatus(float dt) {
     if (GameManager::getInstance()->getGameEndStatus()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::spawnCarCallback));
         this->unschedule(CC_SCHEDULE_SELECTOR(GamePlay::checkGameStatus)); // stop checking after it's ended
+        this->car->removeFromParentAndCleanup(true);
         CCLOG("Game ended. Callback unscheduled.");
+        gameEndPopUp();
     }
 }
+void GamePlay::gameEndPopUp(){
+    CCLOG(" Game Play PopUp  state=%d",GameManager::getInstance()->getGameEndStatus());
+    auto base=Sprite::create(ASSET::Base);
+    base->setPosition(s/2);
+    Vec2 sizeBase=base->getBoundingBox().size;
+    base->setContentSize(Size(s.width/1.2,sizeBase.y));
+    canvas->addChild(base);
+    auto title = Label::createWithTTF("Game Over", "fonts/Marker Felt.ttf", 40);
+    base->addChild(title);
+    title->setAnchorPoint(Vec2(0.5,0.5));
+    title->setTextColor(Color4B(117, 53, 0, 100));
+    title->setAlignment(TextHAlignment::CENTER);
+    title->setPosition(Vec2(base->getContentSize().width/2,sizeBase.y-80));
 
+
+    // Button
+
+    auto restartButton=cocos2d::ui::Button::create(ASSET::Blue_Button.c_str());
+    restartButton->setAnchorPoint(Vec2 (0.5, 0.5));
+    restartButton->setPosition(Vec2 (base->getContentSize().width/2,50));
+    restartButton->ignoreContentAdaptWithSize(false);
+    restartButton->setContentSize(Size(100, 60));
+    restartButton->setTitleText("Restart");
+    restartButton->setTitleFontName("fonts/Marker Felt.ttf");
+    restartButton->setTitleFontSize(20);
+    base->addChild(restartButton,3);
+    restartButton->addClickEventListener(CC_CALLBACK_1(GamePlay::onRestartButtonClicked, this));
+}
+void GamePlay:: onRestartButtonClicked(cocos2d::Ref* sender){
+    this->unscheduleAllCallbacks();
+    GameManager::getInstance()->setGameEndStatus(false);
+    this->canvas->removeAllChildren();
+    CCLOG(" In Reset Game PopUp State Change:: %d", GameManager::getInstance()->getGameEndStatus());
+    Director::getInstance()->replaceScene(TransitionFade::create(0.5f, GamePlay::createScene()));
+}
 void GamePlay::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application
