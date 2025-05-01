@@ -153,13 +153,25 @@ void GamePlay::addBackButton(){
     backbtn->addClickEventListener(CC_CALLBACK_1(GamePlay::onBackButtonClicked, this));
 }
 void GamePlay::addRandomCars() {
-      Sprite * obstacleCar=Sprite::create();
-      obstacleCar->addComponent(new RandomCar());
-    auto RandomCarComponent = dynamic_cast<RandomCar*>(obstacleCar->getComponent("RandomCar"));
-    if (RandomCarComponent) {
-        RandomCarComponent->createRandomCar(s,land,canvas);
+    auto car = carPool.getNode();
+    if(car){
+        auto RandomCarComponent = dynamic_cast<RandomCar*>(car->getComponent("RandomCar"));
+        if (RandomCarComponent) {
+            RandomCarComponent->createRandomCar(s,land,canvas,carPool );
+        }
+        canvas->addChild(car);
+    }else{
+        Sprite * obstacleCar=Sprite::create();
+        obstacleCar->addComponent(new RandomCar());
+        auto RandomCarComponent = dynamic_cast<RandomCar*>(obstacleCar->getComponent("RandomCar"));
+        if (RandomCarComponent) {
+            RandomCarComponent->createRandomCar(s,land,canvas,carPool);
+        }
+
+        canvas->addChild(obstacleCar);
+
     }
-    canvas->addChild(obstacleCar);
+
 }
 void GamePlay::spawnCarCallback(float dt) {
     addRandomCars();

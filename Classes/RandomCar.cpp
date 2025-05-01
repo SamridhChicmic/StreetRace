@@ -6,7 +6,8 @@ RandomCar::RandomCar(){
 void RandomCar::onEnter(){
 
 }
-void RandomCar::createRandomCar(Size  s,Node * land, Node * canvas){
+void RandomCar::createRandomCar(Size  s,Node * land, Node * canvas,NodePool carPool){
+    this->carPool=carPool;
     Vec2 OriginalPos = Vec2(s.width/2, s.height);
     Vec2 maxOffsetRight = Vec2(OriginalPos.x + land->getContentSize().width / 6.5, s.height);
     Vec2 maxOffsetLeft = Vec2(OriginalPos.x - land->getContentSize().width / 6.5, s.height);
@@ -32,7 +33,13 @@ void RandomCar::moveRandomCar(){
         CurrPos.y=CurrPos.y-(GameManager::getInstance()->getCarSpeed()/2);
         this->_owner->setPosition(Vec2(CurrPos.x,CurrPos.y--));
     }
+    else{
+
+         this->getOwner()->removeFromParent();
+        this->carPool.returnNode(dynamic_cast<Sprite*>(this->getOwner()));
+    }
 }
+
 void RandomCar::collisionCheck() {
     bool value= this->getOwner()->getBoundingBox().intersectsRect(GameManager::getInstance()->getCarRef()->getBoundingBox());
     if(value){

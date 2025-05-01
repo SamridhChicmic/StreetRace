@@ -21,13 +21,11 @@ void CarMoveMent::onEnter(){
 }
 bool CarMoveMent :: onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event){
     touchStart=touch->getLocation();
-    CCLOG("Touch Began at: x=%f, y=%f", touchStart.x, touchStart.y);
     return true;
 }
 void CarMoveMent::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event) {
     if(GameManager::getInstance()->getGameEndStatus())return;
     Vec2 touchEnd = touch->getLocation();
-    CCLOG("Touch End at: x=%f, y=%f", touchEnd.x, touchEnd.y);
 
     float xDiff = touchEnd.x - touchStart.x;
     float threshold = land->getContentSize().width / 6.5;
@@ -48,18 +46,18 @@ void CarMoveMent::moveCar(float diff) {
     float maxOffsetRight = OriginalPos.x+land->getContentSize().width / 6.5;
     float maxOffsetLeft = OriginalPos.x-land->getContentSize().width / 6.5;
     float newX = currentPos.x + diff;
-    CCLOG("OutSide  x=%f curr=%f", newX ,currentPos.x);
+
     if (newX >= maxOffsetLeft && newX <= maxOffsetRight) {
-        float rotationAngle = (diff > 0) ? 15.0f : -15.0f;
-        auto move = MoveTo::create(0.1f, Vec2(newX, currentPos.y));
-        auto rotate = RotateTo::create(0.1f, rotationAngle);
-        auto rotateBack = RotateTo::create(0.1f, 0.0f);
+        float rotationAngle = (diff > 0) ? 13.0f : -13.0f;
+        auto move = MoveTo::create(0.08f, Vec2(newX, currentPos.y));
+        auto rotate = RotateTo::create(0.08f, rotationAngle);
+        auto rotateBack = RotateTo::create(0.08f, 0.0f);
         auto onTweenFinished = CallFunc::create(CC_CALLBACK_0(CarMoveMent::onTweenFinished, this));
         isMoving=true;
         auto tween = Sequence::create(rotate, move, rotateBack,onTweenFinished, nullptr);
         Car->runAction(tween);
     } else {
-        CCLOG("Car move blocked, out of bounds");
+
     }
 }
 void CarMoveMent::onTweenFinished() {

@@ -30,6 +30,7 @@
 #include "GameManager.h"
 #include "CarMoveMent.h"
 #include "RandomCar.h"
+#include "NodePool.h"
 class GamePlay : public cocos2d::Scene
 {
 public:
@@ -39,6 +40,7 @@ public:
     cocos2d::Sprite* car;
     // cocos2d::ui::PageView* pageView;
     cocos2d::Size s;
+    NodePool carPool;
     virtual bool init();
     
     // a selector callback
